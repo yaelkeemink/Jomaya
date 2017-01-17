@@ -1,0 +1,3 @@
+{
+  "projects": [ "Jomaya.Klantenservice/src/005 - Outgoing", "Jomaya.Klantenservice/src/004 - Incoming", "Jomaya.Klantenservice/src/001 - Domain/Entities", "Jomaya.Klantenservice/src/002 - Infrastructure", "Jomaya.Klantenservice/src/001 - Domain/Services", "Jomaya.Klantenservice/src/003 - Facade" ]
+}

@@ -1,0 +1,3 @@
+{
+  "projects": [ "Jomaya.Frontend/src/002 - Infrastructure", "Jomaya.Frontend/src/004 - Incoming", "Jomaya.Frontend/src/001 - Domain/Entities", "../Jomaya.FoutLogging/Jomaya.FoutLogging/src/001 - Domain" ]
+}

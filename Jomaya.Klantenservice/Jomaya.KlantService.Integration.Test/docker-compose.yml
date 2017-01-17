@@ -1,0 +1,29 @@
+# Run tests in docker
+
+version: '2'
+services:
+  integration-klantservice-test:
+    image: microsoft/dotnet:1.0.1-sdk-projectjson
+    volumes:
+     - ../../:/app
+     - ~/.nuget/packages:/root/.nuget/packages:ro
+     - ~/clrdbg:/clrdbg:ro
+    working_dir: /app/Jomaya.Klantenservice/Jomaya.KlantService.Integration.Test
+    environment:
+      'ConnectionStrings:DataAccessMySqlProvider': server=db;userid=jomaya;password=jomaya;database=jomaya-klantservice-test
+      'ConnectionStrings:RabbitMQ': rabbitmq
+    entrypoint: 
+     - dotnet
+     - test
+    links:
+     - mysql-integration-klantservice-test:db
+     - rabbitmq-integration-klantservice-test:rabbitmq
+  mysql-integration-klantservice-test:
+    image: mysql
+    environment:
+      MYSQL_DATABASE: jomaya-klantservice-test
+      MYSQL_USER: jomaya
+      MYSQL_PASSWORD: jomaya
+      MYSQL_ROOT_PASSWORD: jomaya
+  rabbitmq-integration-klantservice-test:
+    image: rabbitmq:3-management

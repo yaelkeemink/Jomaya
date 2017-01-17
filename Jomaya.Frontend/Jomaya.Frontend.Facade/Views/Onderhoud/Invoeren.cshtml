@@ -1,0 +1,33 @@
+﻿@model Jomaya.Frontend.Entities.Onderhoudsopdracht
+<div class="row">
+    <div class="col-md-12">
+        <div>
+            <h1>Onderhoudsopdracht Invoeren</h1>
+            <p>
+                Voer hieronder uw onderhoudsopdracht in.
+            </p>
+            <form method="post" class="col-md-6" asp-action="Toevoegen" asp-controller="Onderhoud" enctype="multipart/form-data">
+                @Html.LabelFor(a => a.Kilometerstand)
+                <br />
+                @Html.EditorFor(a => a.Kilometerstand)
+                @Html.ValidationMessageFor(a => a.Kilometerstand)
+                <br />
+                <br />
+                @Html.LabelFor(a => a.IsApk, "APK nodig")
+                <br />
+                @Html.CheckBoxFor(a => a.IsApk)
+                @Html.ValidationMessageFor(a => a.IsApk)
+                <br />
+                <br />
+                @Html.LabelFor(a => a.Werkzaamheden)
+                <br />
+                @Html.TextAreaFor(a => a.Werkzaamheden)
+                @Html.ValidationMessageFor(a => a.Werkzaamheden)
+
+                @Html.HiddenFor(a => a.AutoId)
+                <br /><br />
+                <input type="submit" value="Invoeren">
+            </form>
+        </div>
+    </div>
+</div>

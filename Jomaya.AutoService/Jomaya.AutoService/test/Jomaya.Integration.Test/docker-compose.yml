@@ -1,0 +1,29 @@
+# Run tests in docker
+
+version: '2'
+services:
+  integration-autoservice-test:
+    image: microsoft/dotnet:1.0.1-sdk-projectjson
+    volumes:
+     - ../../:/app
+     - ~/.nuget/packages:/root/.nuget/packages:ro
+     - ~/clrdbg:/clrdbg:ro
+    working_dir: /app/Integration.Test/Jomaya.Integration.Test   /app/Facade.Test/Case2.JaJetSt.OpdrachtService.Facade.Test
+    environment:
+      'ConnectionStrings:DataAccessMySqlProvider': server=db;userid=jomaya;password=jomaya;database=jomaya-autoservice-test
+      'ConnectionStrings:RabbitMQ': rabbitmq
+    entrypoint: 
+     - dotnet
+     - test
+    links:
+     - mysql-integration-autoservice-test:db
+     - rabbitmq-integration-autoservice-test:rabbitmq
+  mysql-integration-autoservice-test:
+    image: mysql
+    environment:
+      MYSQL_DATABASE: jomaya-autoservice-test
+      MYSQL_USER: jomaya
+      MYSQL_PASSWORD: jomaya
+      MYSQL_ROOT_PASSWORD: jomaya
+  rabbitmq-integration-autoservice-test:
+    image: rabbitmq:3-management

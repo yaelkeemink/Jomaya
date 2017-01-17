@@ -1,0 +1,55 @@
+version: '2'
+
+services:
+  mysql-autoservice:
+    image: mysql
+    container_name:  mysql-autoservice
+    environment:
+      MYSQL_PASSWORD: jomaya
+      MYSQL_DATABASE: jomaya-autoservice
+      MYSQL_USER: jomaya
+      MYSQL_ROOT_PASSWORD: jomaya123
+    ports:
+      - 5001:3306
+    networks: 
+      - jomaya-autoservice
+    volumes:
+      - c:/TFS/jomaya/db/autoservice/:/var/lib/mysql
+  phpmyadmin-autoservice:
+    image: phpmyadmin/phpmyadmin
+    container_name: phpmyadmin-autoservice
+    links:
+     -  mysql-autoservice:db
+    ports:
+     - 5002:80
+    networks: 
+      - jomaya-autoservice
+  Jomaya.autoservice.Facade:
+    image: user/jomaya.autoservice.facade${TAG}
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      'ConnectionStrings:DataAccessMySqlProvider': server=db;port=3306;userid=jomaya;password=jomaya;database=jomaya-autoservice;
+      'ConnectionStrings:RabbitMQ': rabbitmq
+    restart: ON_FAILURE
+    links:
+     -  mysql-autoservice:db
+    external_links:
+     - rabbitmq:rabbitmq
+    ports:
+      - 5003:80
+    networks: 
+     jomaya-eventbus:
+       aliases:
+         - jomaya-autoservice
+     jomaya-autoservice:
+
+networks:
+  jomaya-eventbus:
+    external:
+      name: jomaya-eventbus
+  jomaya-autoservice:
+    external:
+      name: jomaya-autoservice  
+

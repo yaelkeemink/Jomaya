@@ -1,0 +1,21 @@
+{
+  "version": "1.0.0-*",
+
+  "dependencies": {
+    "Jomaya.IntegratieService.Entities": "1.0.0-*",
+    "Jomaya.IntegratieService.Incoming": "1.0.0-*",
+    "Jomaya.IntegratieService.Outgoing": "1.0.0-*",
+    "System.Net.Requests": "4.0.11"
+  },
+  "frameworks": {
+    "netcoreapp1.0": {
+      "dependencies": {
+        "Microsoft.NETCore.App": {
+          "type": "platform",
+          "version": "1.0.1"
+        }
+      },
+      "imports": "dnxcore50"
+    }
+  }
+}

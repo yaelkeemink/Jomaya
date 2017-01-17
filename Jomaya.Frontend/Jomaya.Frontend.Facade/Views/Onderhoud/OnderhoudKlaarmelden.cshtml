@@ -1,0 +1,40 @@
+﻿@model Jomaya.Frontend.Entities.Onderhoudsopdracht
+<div class="row">
+    <div class="col-md-12">
+        <div>
+            <h1>Klaarmelden</h1>
+            <p>
+                Meld een opdracht klaar
+            </p>
+            <form method="post" class="col-md-6" asp-action="klaarmelden" asp-controller="Onderhoud" enctype="multipart/form-data">
+                @Html.HiddenFor(a => a.Kilometerstand)
+                @Html.HiddenFor(a => a.AutoId)
+                @Html.HiddenFor(a => a.Id)
+                @Html.LabelFor(a => a.Werkzaamheden)
+                <br />
+                @Html.DisplayFor(a => a.Werkzaamheden)
+                <br />
+                <br />
+                @Html.LabelFor(a => a.IsApk)
+                <br />
+                @Html.DisplayFor(a => a.IsApk)
+                <br />
+                <br />
+                @Html.LabelFor(a => a.Status)
+                <br />
+                @Html.DisplayFor(a => a.Status)
+                <br />
+                <br />
+                @Html.LabelFor(a => a.Auto.Kenteken)
+                <br />
+                @Html.DisplayFor(a => a.Auto.Kenteken)  
+                <br /><br />
+                @Html.LabelFor(a => a.Auto.klant.Telefoonnummer)
+                <br />
+                @Html.DisplayFor(a => a.Auto.klant.Telefoonnummer)              
+                <br /><br />
+                <input type="submit" value="Klaarmelden">
+            </form>
+        </div>
+    </div>
+</div>

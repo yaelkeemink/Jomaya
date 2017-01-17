@@ -1,0 +1,175 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "v1",
+    "title": "Jomaya AutoService",
+    "description": "De service die de auto's beheert.",
+    "termsOfService": "None"
+  },
+  "basePath": "/",
+  "paths": {
+    "/api/Auto": {
+      "get": {
+        "tags": [ "Auto" ],
+        "operationId": "ApiAutoGet",
+        "consumes": [],
+        "produces": [ "text/plain", "application/json", "text/json" ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "type": "array",
+              "items": { "type": "string" }
+            }
+          }
+        },
+        "deprecated": false
+      },
+      "post": {
+        "tags": [ "Auto" ],
+        "operationId": "PostCreateAuto",
+        "consumes": [ "application/json", "text/json", "application/json-patch+json" ],
+        "produces": [ "text/plain", "application/json", "text/json" ],
+        "parameters": [
+          {
+            "name": "auto",
+            "in": "body",
+            "required": false,
+            "schema": { "$ref": "#/definitions/Auto" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": { "$ref": "#/definitions/Auto" }
+          },
+          "400": {
+            "description": "Client Error",
+            "schema": { "$ref": "#/definitions/ErrorMessage" }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/api/Onderhoud": {
+      "put": {
+        "tags": [ "Onderhoud" ],
+        "operationId": "PutUpdateOnderhoudsopdracht",
+        "consumes": [ "application/json", "text/json", "application/json-patch+json" ],
+        "produces": [ "text/plain", "application/json", "text/json" ],
+        "parameters": [
+          {
+            "name": "onderhoudsopdracht",
+            "in": "body",
+            "required": false,
+            "schema": { "$ref": "#/definitions/Onderhoudsopdracht" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": { "$ref": "#/definitions/Onderhoudsopdracht" }
+          },
+          "400": {
+            "description": "Client Error",
+            "schema": { "$ref": "#/definitions/ErrorMessage" }
+          }
+        },
+        "deprecated": false
+      },
+      "post": {
+        "tags": [ "Onderhoud" ],
+        "operationId": "PostCreateOnderhoudsopdracht",
+        "consumes": [ "application/json", "text/json", "application/json-patch+json" ],
+        "produces": [ "text/plain", "application/json", "text/json" ],
+        "parameters": [
+          {
+            "name": "onderhoudsopdracht",
+            "in": "body",
+            "required": false,
+            "schema": { "$ref": "#/definitions/Onderhoudsopdracht" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": { "$ref": "#/definitions/Onderhoudsopdracht" }
+          },
+          "400": {
+            "description": "Client Error",
+            "schema": { "$ref": "#/definitions/ErrorMessage" }
+          }
+        },
+        "deprecated": false
+      }
+    }
+  },
+  "definitions": {
+    "Auto": {
+      "required": [ "kenteken", "type" ],
+      "type": "object",
+      "properties": {
+        "id": {
+          "format": "int64",
+          "type": "integer"
+        },
+        "kenteken": {
+          "maxLength": 10,
+          "type": "string"
+        },
+        "type": { "type": "string" },
+        "klantId": {
+          "format": "int64",
+          "type": "integer"
+        }
+      }
+    },
+    "ErrorMessage": {
+      "type": "object",
+      "properties": {
+        "foutType": {
+          "format": "int32",
+          "enum": [ 0, 10, 20, 30, 40 ],
+          "type": "integer"
+        },
+        "foutMelding": { "type": "string" },
+        "oplossing": { "type": "string" }
+      }
+    },
+    "Onderhoudsopdracht": {
+      "required": [ "kilometerstand" ],
+      "type": "object",
+      "properties": {
+        "id": {
+          "format": "int64",
+          "type": "integer"
+        },
+        "autoId": {
+          "format": "int64",
+          "type": "integer"
+        },
+        "auto": { "$ref": "#/definitions/Auto" },
+        "kilometerstand": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "isApk": { "type": "boolean" },
+        "werkzaamheden": { "type": "string" },
+        "status": {
+          "format": "int32",
+          "enum": [ 0, 1, 2, 3, 4 ],
+          "type": "integer"
+        },
+        "steekproefDatum": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "datum": {
+          "format": "date-time",
+          "type": "string"
+        }
+      }
+    }
+  },
+  "securityDefinitions": {}
+}

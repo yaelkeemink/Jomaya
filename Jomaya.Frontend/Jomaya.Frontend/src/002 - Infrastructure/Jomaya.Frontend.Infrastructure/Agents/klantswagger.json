@@ -1,0 +1,67 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "v1",
+    "title": "A Monument service",
+    "description": "Restauration of monuments",
+    "termsOfService": "None"
+  },
+  "basePath": "/",
+  "paths": {
+    "/api/Klant": {
+      "post": {
+        "tags": [ "Klant" ],
+        "operationId": "Post",
+        "consumes": [ "application/json", "text/json", "application/json-patch+json" ],
+        "produces": [ "text/plain", "application/json", "text/json" ],
+        "parameters": [
+          {
+            "name": "klant",
+            "in": "body",
+            "required": false,
+            "schema": { "$ref": "#/definitions/Klant" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": { "$ref": "#/definitions/Klant" }
+          },
+          "400": {
+            "description": "Client Error",
+            "schema": { "$ref": "#/definitions/ErrorMessage" }
+          }
+        },
+        "deprecated": false
+      }
+    }
+  },
+  "definitions": {
+    "Klant": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "format": "int64",
+          "type": "integer"
+        },
+        "voorletters": { "type": "string" },
+        "tussenvoegsel": { "type": "string" },
+        "achternaam": { "type": "string" },
+        "telefoonnummer": { "type": "string" }
+      }
+    },
+    "ErrorMessage": {
+      "type": "object",
+      "properties": {
+        "foutType": {
+          "format": "int32",
+          "enum": [ 0, 10, 20, 30, 40 ],
+          "type": "integer"
+        },
+        "foutMelding": { "type": "string" },
+        "oplossing": { "type": "string" }
+      }
+    }
+  },
+  "securityDefinitions": {}
+}

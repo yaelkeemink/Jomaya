@@ -1,0 +1,16 @@
+﻿@model Jomaya.Frontend.Infrastructure.Agents.AutoServiceAgent.Models.Onderhoudsopdracht
+<div class="row">V
+    <div class="col-md-12">
+        <div>
+            <h1>Onderhoudsopdracht Invoeren</h1>
+            <p>
+                Voer hieronder uw onderhoudsopdracht in.
+            </p>
+            <form method="post" class="col-md-6" asp-action="StatusVeranderen" asp-controller="Status" enctype="multipart/form-data">
+                @Html.DisplayFor(a => a.Auto.Kenteken)
+                @Html.HiddenFor(a => a.Auto)
+                <input type="submit" value="Invoeren">
+            </form>
+        </div>
+    </div>
+</div>

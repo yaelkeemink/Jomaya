@@ -1,0 +1,38 @@
+﻿@model List<Jomaya.Frontend.Entities.Onderhoudsopdracht>
+<div class="row">
+    <div class="col-md-12">
+        <div>
+            <h1>Onderhoudsopdrachten overzicht</h1>
+            
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Datum</th>
+                        <th>Status</th>
+                        <th>Kenteken</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var opdracht in Model)
+                    {
+                        <tr>
+                            <td>
+                                @opdracht.Datum.ToString("yyyy-MM-dd hh:mm")
+                            </td>
+                            <td>
+                                @opdracht.Status.ToString()
+                            </td>
+                            <td>
+                                @opdracht.Auto.Kenteken
+                            </td>
+                            <td>
+                                @Html.ActionLink("Onderhoud", "OnderhoudBewerken", new { id = opdracht.Id })
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+            
+        </div>
+    </div>
+</div>

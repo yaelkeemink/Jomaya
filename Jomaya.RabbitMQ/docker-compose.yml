@@ -1,0 +1,18 @@
+version: '2'
+
+services:
+    rabbitmq:
+        container_name: rabbitmq
+        image: rabbitmq:3-management
+        ports:
+            - 5673:5672
+            - 15673:15672
+            - 8080:8080
+        restart: ON_FAILURE
+        networks: 
+            - jomaya-eventbus
+
+networks:
+  jomaya-eventbus:
+    external:
+      name: jomaya-eventbus

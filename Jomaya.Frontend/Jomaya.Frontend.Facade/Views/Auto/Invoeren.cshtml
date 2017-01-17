@@ -1,0 +1,22 @@
+﻿@model Jomaya.Frontend.Entities.Auto
+
+<div class="row">
+    <div class="col-md-12">
+        <div>
+            <h1>Auto Invoeren</h1>            
+            <p>
+                Voer hieronder uw Auto gegevens in.
+            </p>
+            <form method="post" class="col-md-6" asp-action="Toevoegen" asp-controller="Auto" enctype="multipart/form-data">
+                @Html.LabelFor(a => a.Kenteken)
+                <br />
+                @Html.EditorFor(a => a.Kenteken)
+                @Html.ValidationMessageFor(a => a.Kenteken)
+
+                @Html.HiddenFor(a => a.KlantId)
+                <br /><br />
+                <input type="submit" value="Invoeren"> 
+            </form>
+        </div>
+    </div>
+</div>

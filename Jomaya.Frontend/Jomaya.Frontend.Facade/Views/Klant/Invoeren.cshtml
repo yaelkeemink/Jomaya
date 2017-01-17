@@ -1,0 +1,38 @@
+﻿@model Jomaya.Frontend.Entities.Klant
+<div class="row">
+    <div class="col-md-12">
+        <div>
+            <h1>Klant Invoeren</h1>            
+            <p>
+                Voer hieronder de klant gegevens in.
+            </p>
+            <form method="post" class="col-md-6" asp-action="Insert" asp-controller="Klant" enctype="multipart/form-data">
+                @Html.LabelFor(a => a.Voorletters)
+                <br />
+                @Html.EditorFor(a => a.Voorletters)
+                @Html.ValidationMessageFor(a => a.Voorletters)
+                <br/>
+                <br />
+                @Html.LabelFor(a => a.Tussenvoegsel)
+                <br />
+                @Html.EditorFor(a => a.Tussenvoegsel)
+                @Html.ValidationMessageFor(a => a.Tussenvoegsel)
+                <br/>
+                <br />
+                @Html.LabelFor(a => a.Achternaam)
+                <br />
+                @Html.EditorFor(a => a.Achternaam)
+                @Html.ValidationMessageFor(a => a.Achternaam)
+                <br />
+                <br />
+                @Html.LabelFor(a => a.Telefoonnummer)
+                <br />
+                @Html.EditorFor(a => a.Telefoonnummer)
+                @Html.ValidationMessageFor(a => a.Telefoonnummer)
+                <br />
+                <br />
+                <input type="submit" value="Invoeren"> 
+            </form>
+        </div>
+    </div>
+</div>

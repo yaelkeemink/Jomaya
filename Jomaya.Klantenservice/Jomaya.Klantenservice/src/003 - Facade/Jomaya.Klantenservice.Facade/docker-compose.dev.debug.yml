@@ -1,0 +1,63 @@
+version: '2'
+
+services:
+  mysql-klantservice:
+    image: mysql
+    container_name: mysql-klantservice
+    environment:
+    MYSQL_PASSWORD: jomaya
+      MYSQL_DATABASE: jomaya-klantservice
+      MYSQL_USER: jomaya
+      MYSQL_ROOT_PASSWORD: jomaya123
+    ports:
+      - 4001:3306
+    networks: 
+      - jomaya-klantenservice
+    volumes:
+      - c:/TFS/jomaya/db/klantenservice/:/var/lib/mysql
+  phpmyadmin-klantservice:
+    image: phpmyadmin/phpmyadmin
+    container_name: phpmyadmin-klantservice
+    links:
+     - mysql-klantservice:db
+    ports:
+     - 4002:80
+    networks: 
+      - jomaya-klantenservice
+  jomaya.klantenservice.facade:
+    image: user/jomaya.klantenservice.facade${TAG}
+    build:
+      args:
+        source: obj/Docker/empty/
+    environment:
+      - 'ConnectionStrings:DataAccessMySqlProvider': server=db;userid=jomaya;password=jomaya;database=jomaya-klantservice;
+      - 'ConnectionStrings:RabbitMQ': rabbitmq
+      - ASPNETCORE_ENVIRONMENT=Development
+      - DOTNET_USE_POLLING_FILE_WATCHER=1
+    restart: ON_FAILURE
+    labels:
+      - "com.microsoft.visualstudio.targetoperatingsystem=linux"
+    links:
+     - mysql-klantservice:db
+    external_links:
+     - rabbitmq:rabbitmq
+    ports:
+      - 4003:80
+    networks: 
+      jomaya-eventbus:
+        aliases:
+         - jomaya-klantenservice       
+      jomaya-klantenservice:
+    volumes:
+      - .:/app
+      - ~/.nuget/packages:/root/.nuget/packages:ro
+      - ~/clrdbg:/clrdbg:ro
+    entrypoint: tail -f /dev/null
+
+networks:
+  jomaya-eventbus:
+    external:
+      name: jomaya-eventbus
+  jomaya-klantenservice:
+    external:
+      name: jomaya-klantenservice

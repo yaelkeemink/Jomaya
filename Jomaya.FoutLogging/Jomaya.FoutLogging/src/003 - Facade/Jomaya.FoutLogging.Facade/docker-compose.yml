@@ -1,0 +1,54 @@
+version: '2'
+
+services:
+  mysql-foutlogging:
+    image: mysql
+    container_name: mysql-foutlogging
+    environment:
+      MYSQL_PASSWORD: jomaya
+      MYSQL_DATABASE: jomaya-foutlogging
+      MYSQL_USER: jomaya
+      MYSQL_ROOT_PASSWORD: jomaya123
+    ports:
+      - 7001:3306
+    networks: 
+      - jomaya-foutlogging
+    volumes:
+      - c:/TFS/jomaya/db/foutlogging/:/var/lib/mysql
+  phpmyadmin-foutlogging:
+    image: phpmyadmin/phpmyadmin
+    container_name: phpmyadmin-foutlogging
+    links:
+     - mysql-foutlogging:db
+    ports:
+     - 7002:80
+    networks: 
+      - jomaya-foutlogging
+  Jomaya.foutlogging.Facade:
+    image: user/jomaya.foutlogging.facade${TAG}
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      'ConnectionStrings:DataAccessMySqlProvider': server=db;userid=jomaya;password=jomaya;database=jomaya-foutlogging;
+      'ConnectionStrings:RabbitMQ': rabbitmq
+    restart: ON_FAILURE
+    links:
+     - mysql-foutlogging:db
+    external_links:
+     - rabbitmq:rabbitmq
+    ports:
+      - 7003:80
+    networks: 
+     jomaya-eventbus:
+       aliases:
+         - jomaya-foutlogging
+     jomaya-foutlogging:
+
+networks:
+  jomaya-eventbus:
+    external:
+      name: jomaya-eventbus
+  jomaya-foutlogging:
+    external:
+      name: jomaya-foutlogging

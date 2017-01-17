@@ -1,0 +1,48 @@
+version: '2'
+
+services:
+  mysql-logevents:
+    image: mysql
+    container_name: mysql-logevents
+    environment:
+      MYSQL_PASSWORD: jomaya
+      MYSQL_DATABASE: jomaya-logevents
+      MYSQL_USER: jomaya
+      MYSQL_ROOT_PASSWORD: jomaya123
+    ports:
+      - 8001:3306
+    networks: 
+      - jomaya-auditlog
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: phpmyadmin-jomaya
+    links:
+     - mysql-logevents:db
+    ports:
+     - 8002:80
+    networks: 
+      - jomaya-auditlog
+  minor.wsa.auditlogservice:
+    image: steven166/audit-log-service:latest
+    environment:
+      'ConnectionStrings:DataAccessMySqlProvider': server=db;userid=jomaya;password=jomaya;database=jomaya-logevents;
+      'ConnectionStrings:RabbitMQ': rabbitmq
+    restart: ON_FAILURE
+    links:
+     - mysql-logevents:db
+    external_links:
+     - rabbitmq:rabbitmq
+    ports:
+      - 8003:80
+    networks: 
+      - jomaya-eventbus
+      - jomaya-auditlog
+
+networks:
+  jomaya-eventbus:
+    external:
+      name: jomaya-eventbus
+  jomaya-auditlog:
+    external:
+      name: jomaya-auditlog
+   

@@ -1,0 +1,54 @@
+version: '2'
+
+services:
+  mysql-frontend:
+    image: mysql
+    container_name: mysql-frontend
+    environment:
+        MYSQL_PASSWORD: jomaya
+      MYSQL_DATABASE: jomaya-frontend
+      MYSQL_USER: jomaya
+      MYSQL_ROOT_PASSWORD: jomaya123
+    ports:
+      - 3001:3306
+    networks: 
+      - jomaya-frontend
+    volumes:
+      - c:/TFS/jomaya/db/frontend/:/var/lib/mysql
+  phpmyadmin-frontend:
+    image: phpmyadmin/phpmyadmin
+    container_name: phpmyadmin-frontend
+    links:
+     - mysql-frontend:db
+    ports:
+     - 3002:80
+    networks: 
+      - jomaya-frontend
+  jomaya.frontend.facade:
+    image: user/jomaya.frontend.facade${TAG}
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      'ConnectionStrings:DataAccessMySqlProvider': server=db;userid=jomaya;password=jomaya;database=jomaya-frontend;
+      'ConnectionStrings:RabbitMQ': rabbitmq
+    restart: ON_FAILURE
+    links:
+     - mysql-frontend:db
+    external_links:
+     - rabbitmq:rabbitmq
+    ports:
+      - 3003:80
+    networks: 
+      jomaya-eventbus:
+        aliases:
+         - jomaya-frontend       
+      jomaya-frontend:
+      
+networks:
+  jomaya-eventbus:
+    external:
+      name: jomaya-eventbus
+  jomaya-frontend:
+    external:
+      name: jomaya-frontend

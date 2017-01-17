@@ -1,0 +1,100 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{2C902D8D-D0F0-40D6-8544-8D44417357F8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "001 - Domain", "001 - Domain", "{F83B808F-E522-45ED-8E09-36590100A984}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Entities", "Entities", "{29537987-EC9A-43D4-8E17-6B0CC9A1B1E5}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Jomaya.Klantenservice.Entities", "Jomaya.Klantenservice\src\001 - Domain\Entities\Jomaya.Klantenservice.Entities\Jomaya.Klantenservice.Entities.xproj", "{5E6C34F3-3459-4837-874B-0C871071C770}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{6E6C7BB9-F944-44C4-906A-F4EB561E0AE8}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Jomaya.Klantenservice.Services", "Jomaya.Klantenservice\src\001 - Domain\Services\Jomaya.Klantenservice.Services\Jomaya.Klantenservice.Services.xproj", "{816AEA8F-7162-44EA-9ADC-8DA4B135ED7B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "002 - Infrastructure", "002 - Infrastructure", "{E8E90FDD-BBEB-467A-9B80-6B74A9DEB79E}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Jomaya.Klantenservice.Infrastructure", "Jomaya.Klantenservice\src\002 - Infrastructure\Jomaya.Klantenservice.Infrastructure\Jomaya.Klantenservice.Infrastructure.xproj", "{D87E299A-10B1-4573-B3D2-36F5E2FA6AE4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "003 - Facade", "003 - Facade", "{E60B91AA-9BA9-47B2-8D0A-E178ECD16876}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Jomaya.Klantenservice.Facade", "Jomaya.Klantenservice\src\003 - Facade\Jomaya.Klantenservice.Facade\Jomaya.Klantenservice.Facade.xproj", "{390080F7-536B-4B72-8ACD-F2A51EC897DE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{D6DF849F-C2AA-4082-ACC9-34650AB5C88F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain.Test", "Domain.Test", "{91579757-92FA-4479-86C9-0C5CA2C89153}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Jomaya.Klantenservice.001 - Domain.Test", "Jomaya.Klantenservice\test\Domain.Test\Jomaya.Klantenservice.001 - Domain.Test\Jomaya.Klantenservice.001 - Domain.Test.xproj", "{6DA5BD63-01FF-462C-B93D-8CEB8B918D50}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure.Test", "Infrastructure.Test", "{263BF072-DFA8-4E44-871D-FC69D12DBC31}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Jomaya.Klantenservice.002 - Infrastructure.Test", "Jomaya.Klantenservice\test\Infrastructure.Test\Jomaya.Klantenservice.002 - Infrastructure.Test\Jomaya.Klantenservice.002 - Infrastructure.Test.xproj", "{C0A49744-75E8-45BE-BB6D-0E81F7F30E41}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{3E08AE2D-7F9D-4C01-B363-CB0C6CD19BDA}"
+	ProjectSection(SolutionItems) = preProject
+		global.json = global.json
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Integration.Test", "Integration.Test", "{4E067441-1AA9-45CE-94FC-3365DBED8A47}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Jomaya.KlantService.Integration.Test", "Jomaya.KlantService.Integration.Test\Jomaya.KlantService.Integration.Test.xproj", "{04C44F16-546A-4094-A2DD-B299412A73D9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5E6C34F3-3459-4837-874B-0C871071C770}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E6C34F3-3459-4837-874B-0C871071C770}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E6C34F3-3459-4837-874B-0C871071C770}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E6C34F3-3459-4837-874B-0C871071C770}.Release|Any CPU.Build.0 = Release|Any CPU
+		{816AEA8F-7162-44EA-9ADC-8DA4B135ED7B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{816AEA8F-7162-44EA-9ADC-8DA4B135ED7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{816AEA8F-7162-44EA-9ADC-8DA4B135ED7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{816AEA8F-7162-44EA-9ADC-8DA4B135ED7B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D87E299A-10B1-4573-B3D2-36F5E2FA6AE4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D87E299A-10B1-4573-B3D2-36F5E2FA6AE4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D87E299A-10B1-4573-B3D2-36F5E2FA6AE4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D87E299A-10B1-4573-B3D2-36F5E2FA6AE4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{390080F7-536B-4B72-8ACD-F2A51EC897DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{390080F7-536B-4B72-8ACD-F2A51EC897DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{390080F7-536B-4B72-8ACD-F2A51EC897DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{390080F7-536B-4B72-8ACD-F2A51EC897DE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6DA5BD63-01FF-462C-B93D-8CEB8B918D50}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6DA5BD63-01FF-462C-B93D-8CEB8B918D50}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6DA5BD63-01FF-462C-B93D-8CEB8B918D50}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6DA5BD63-01FF-462C-B93D-8CEB8B918D50}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C0A49744-75E8-45BE-BB6D-0E81F7F30E41}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C0A49744-75E8-45BE-BB6D-0E81F7F30E41}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C0A49744-75E8-45BE-BB6D-0E81F7F30E41}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C0A49744-75E8-45BE-BB6D-0E81F7F30E41}.Release|Any CPU.Build.0 = Release|Any CPU
+		{04C44F16-546A-4094-A2DD-B299412A73D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{04C44F16-546A-4094-A2DD-B299412A73D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{04C44F16-546A-4094-A2DD-B299412A73D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{04C44F16-546A-4094-A2DD-B299412A73D9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{F83B808F-E522-45ED-8E09-36590100A984} = {2C902D8D-D0F0-40D6-8544-8D44417357F8}
+		{29537987-EC9A-43D4-8E17-6B0CC9A1B1E5} = {F83B808F-E522-45ED-8E09-36590100A984}
+		{5E6C34F3-3459-4837-874B-0C871071C770} = {29537987-EC9A-43D4-8E17-6B0CC9A1B1E5}
+		{6E6C7BB9-F944-44C4-906A-F4EB561E0AE8} = {F83B808F-E522-45ED-8E09-36590100A984}
+		{816AEA8F-7162-44EA-9ADC-8DA4B135ED7B} = {6E6C7BB9-F944-44C4-906A-F4EB561E0AE8}
+		{E8E90FDD-BBEB-467A-9B80-6B74A9DEB79E} = {2C902D8D-D0F0-40D6-8544-8D44417357F8}
+		{D87E299A-10B1-4573-B3D2-36F5E2FA6AE4} = {E8E90FDD-BBEB-467A-9B80-6B74A9DEB79E}
+		{E60B91AA-9BA9-47B2-8D0A-E178ECD16876} = {2C902D8D-D0F0-40D6-8544-8D44417357F8}
+		{390080F7-536B-4B72-8ACD-F2A51EC897DE} = {E60B91AA-9BA9-47B2-8D0A-E178ECD16876}
+		{91579757-92FA-4479-86C9-0C5CA2C89153} = {D6DF849F-C2AA-4082-ACC9-34650AB5C88F}
+		{6DA5BD63-01FF-462C-B93D-8CEB8B918D50} = {91579757-92FA-4479-86C9-0C5CA2C89153}
+		{263BF072-DFA8-4E44-871D-FC69D12DBC31} = {D6DF849F-C2AA-4082-ACC9-34650AB5C88F}
+		{C0A49744-75E8-45BE-BB6D-0E81F7F30E41} = {263BF072-DFA8-4E44-871D-FC69D12DBC31}
+		{4E067441-1AA9-45CE-94FC-3365DBED8A47} = {D6DF849F-C2AA-4082-ACC9-34650AB5C88F}
+		{04C44F16-546A-4094-A2DD-B299412A73D9} = {4E067441-1AA9-45CE-94FC-3365DBED8A47}
+	EndGlobalSection
+EndGlobal

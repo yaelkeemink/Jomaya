@@ -1,0 +1,19 @@
+TimeStamp: 29-11-2016 10:01:24 Guid: 352acddf-e481-4eed-b2c6-960c4f438377 AutoID: 1 Eigenaar: J. de Vries Kenteken: AB-BA-33 KilometerStand: 1234 VoertuigType: Personenauto 
+TimeStamp: 29-11-2016 10:06:03 Guid: 9cf40ed7-dfbb-472b-9055-f42ddd4529a0 AutoID: 1 Eigenaar: J. de Vries Kenteken: AB-BA-33 KilometerStand: 1234 VoertuigType: Personenauto 
+TimeStamp: 29-11-2016 10:09:29 Guid: abfe29fc-a2af-4df0-9104-0b216ace142a AutoID: 1 Eigenaar: J. de Vries Kenteken: AB-BA-33 KilometerStand: 1234 VoertuigType: Personenauto 
+TimeStamp: 29-11-2016 10:12:17 Guid: dc4b60da-6d28-4761-9979-55786d5c21a8 AutoID: 1 Eigenaar: J. de Vries Kenteken: AB-BA-33 KilometerStand: 1234 VoertuigType: Personenauto 
+TimeStamp: 29-11-2016 10:14:08 Guid: 3c90134c-5735-480b-97fa-a02037d6cf9a AutoID: 1 Eigenaar: J. de Vries Kenteken: AB-BA-33 KilometerStand: 1234 VoertuigType: Personenauto 
+TimeStamp: 29-11-2016 10:15:54 Guid: 22029e13-fc2c-44d7-9284-fa1950378cc5 AutoID: 1 Eigenaar: J. de Vries Kenteken: AB-BA-33 KilometerStand: 1234 VoertuigType: Personenauto 
+TimeStamp: 29-11-2016 10:20:10 Guid: 412f0008-2292-4993-87be-55dee3a7ac4d AutoID: 1 Eigenaar: J. de Vries Kenteken: AB-BA-33 KilometerStand: 1234 VoertuigType: Personenauto 
+TimeStamp: 29-11-2016 10:23:46 Guid: e0635dd4-0f70-4093-bd18-c7e48efb93d8 AutoID: 1 Eigenaar: J. de Vries Kenteken: AB-BA-33 KilometerStand: 1234 VoertuigType: Personenauto 
+TimeStamp: 29-11-2016 10:27:59 Guid: 6d653247-02c9-4f74-b515-e9655b4f3a1c AutoID: 1 Eigenaar: J. de Vries Kenteken: AB-BA-33 KilometerStand: 1234 VoertuigType: Personenauto 
+TimeStamp: 29-11-2016 10:29:27 Guid: 0227453d-aa20-407a-af65-db73a36af19a AutoID: 1 Eigenaar: J. de Vries Kenteken: AB-BA-33 KilometerStand: 1234 VoertuigType: Personenauto 
+TimeStamp: 29-11-2016 10:30:23 Guid: 47fe2f84-2011-49c1-a5ae-3a5ce0503303 AutoID: 1 Eigenaar: J. de Vries Kenteken: AB-BA-33 KilometerStand: 1234 VoertuigType: Personenauto 
+TimeStamp: 29-11-2016 10:33:04 Guid: b7363782-fe71-42be-b7cf-784635984293 AutoID: 1 Eigenaar: J. de Vries Kenteken: AB-BA-33 KilometerStand: 1234 VoertuigType: Personenauto 
+TimeStamp: 1-12-2016 08:31:06 Guid: 61b59133-e036-4085-aa00-6a8716e409c9 AutoID: 1 Eigenaar: J.S. Kenteken: AB-BA-33 KilometerStand: 1234 VoertuigType: Personenauto 
+TimeStamp: 1-12-2016 08:39:45 Guid: ed03a575-94d5-4424-abc5-aa68b13c4ade AutoID: 1 Eigenaar: J.S.  Wijtenburg Kenteken: AB-BA-33 KilometerStand: 1234 VoertuigType: Personenauto 
+TimeStamp: 1-12-2016 08:40:16 Guid: 295359c4-a5b6-4824-a3ad-2e3f17134f3b AutoID: 1 Eigenaar: J.S.  Wijtenburg Kenteken: AB-BA-33 KilometerStand: 1234 VoertuigType: Personenauto 
+TimeStamp: 1-12-2016 08:44:08 Guid: b4407d35-866a-4d6f-ba0a-5194ff3e88d3 AutoID: 1 Eigenaar: J.S.  Wijtenburg Kenteken: AB-BA-33 KilometerStand: 1234 VoertuigType: Personenauto 
+TimeStamp: 1-12-2016 13:22:24 Guid: f50e7463-22dc-4d83-9627-3db9c52efb4e AutoID: 1 Eigenaar: J  Huiden Kenteken: AB-BA-33 KilometerStand: 1234 VoertuigType: Personenauto 
+TimeStamp: 1-12-2016 14:11:13 Guid: 7f351b3e-e9f6-49bc-bc36-3efa32aeec26 AutoID: 1 Eigenaar: J  Huiden Kenteken: AB-BA-33 KilometerStand: 1234 VoertuigType: 0 
+TimeStamp: 1-12-2016 14:12:45 Guid: f0a8dbfb-96c5-4850-a495-68de8a7b79d6 AutoID: 1 Eigenaar: J  Huiden Kenteken: AB-BA-33 KilometerStand: 1234 VoertuigType: 0 

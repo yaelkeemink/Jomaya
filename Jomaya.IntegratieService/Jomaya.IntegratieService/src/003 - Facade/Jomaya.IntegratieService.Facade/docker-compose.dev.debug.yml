@@ -1,0 +1,62 @@
+version: '2'
+
+services:
+   mysql-integratieservice:
+    image: mysql
+    container_name:  mysql-integratieservice
+    environment:
+    MYSQL_PASSWORD: jomaya
+      MYSQL_DATABASE: jomaya-integratieservice
+      MYSQL_USER: jomaya
+      MYSQL_ROOT_PASSWORD: jomaya123
+    ports:
+      - 6001:3306
+    networks: 
+      - jomaya-integratieservice
+    volumes:
+      - c:/TFS/jomaya/db/integratieservice/:/var/lib/mysql
+  phpmyadmin-integratieservice:
+    image: phpmyadmin/phpmyadmin
+    container_name: phpmyadmin-integratieservice
+    links:
+     -  mysql-integratieservice:db
+    ports:
+     - 6002:80
+    networks: 
+      - jomaya-integratieservice
+  jomaya.integratieservice.facade:
+    image: user/jomaya.integratieservice.facade${TAG}
+    build:
+      args:
+        source: obj/Docker/empty/
+    environment:
+      - 'ConnectionStrings:DataAccessMySqlProvider': server=db;userid=jomaya;password=jomaya;database=jomaya-integratieservice;
+      - 'ConnectionStrings:RabbitMQ': rabbitmq
+      - ASPNETCORE_ENVIRONMENT=Development
+      - DOTNET_USE_POLLING_FILE_WATCHER=1
+    restart: ON_FAILURE
+    labels:
+      - "com.microsoft.visualstudio.targetoperatingsystem=linux"
+    links:
+     -  mysql-integratieservice:db
+    external_links:
+     - rabbitmq:rabbitmq
+    ports:
+      - 6003:80
+    networks: 
+      - jomaya-eventbus
+      - jomaya-integratieservice
+    volumes:
+      - .:/app
+      - ~/.nuget/packages:/root/.nuget/packages:ro
+      - ~/clrdbg:/clrdbg:ro
+    entrypoint: tail -f /dev/null
+
+networks:
+  jomaya-eventbus:
+    external:
+      name: jomaya-eventbus
+  jomaya-integratieservice:
+    external:
+      name: jomaya-integratieservice  
+      

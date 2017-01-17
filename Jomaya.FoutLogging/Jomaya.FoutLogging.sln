@@ -1,0 +1,106 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{1D62610D-7E41-4483-B790-E33F68351D30}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "001 - Domain", "001 - Domain", "{23AB2C68-A392-4E32-BDC9-8BFB33F70267}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Entities", "Entities", "{6E426623-960B-496A-B8CB-A4D0F5660DBB}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Jomaya.FoutLogging.Entities", "Jomaya.FoutLogging\src\001 - Domain\Entities\Jomaya.FoutLogging.Entities\Jomaya.FoutLogging.Entities.xproj", "{5C5A4C5B-ED61-4705-84F9-69580B0C1166}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "002 - Infrastructure", "002 - Infrastructure", "{7996225E-D8F8-4214-982A-3D8919ED7C41}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Jomaya.FoutLogging.Infrastructure", "Jomaya.FoutLogging\src\002 - Infrastructure\Jomaya.FoutLogging.Infrastructure\Jomaya.FoutLogging.Infrastructure.xproj", "{F121BD62-5BB3-451E-BC54-8D0E4D9D6A40}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "003 - Facade", "003 - Facade", "{D8B84203-2C25-4AA0-8C59-BE7E295D2EF9}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Jomaya.FoutLogging.Facade", "Jomaya.FoutLogging\src\003 - Facade\Jomaya.FoutLogging.Facade\Jomaya.FoutLogging.Facade.xproj", "{751B1D88-E595-4E0A-80A8-37E533B2A6E5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "004 - Incoming", "004 - Incoming", "{56595307-B143-4865-8CAD-D9C1CFD49578}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Jomaya.FoutLogging.Incoming", "Jomaya.FoutLogging\src\004 - Incoming\Jomaya.FoutLogging.Incoming\Jomaya.FoutLogging.Incoming.xproj", "{75C2E592-FEE4-4E02-8B08-D8B201EB20E0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "005 - Outgoing", "005 - Outgoing", "{ECD1809E-C239-487B-A592-BE9FE9CC7AFC}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Jomaya.FoutLogging.Outgoing", "Jomaya.FoutLogging\src\005 - Outgoing\Jomaya.FoutLogging.Outgoing\Jomaya.FoutLogging.Outgoing.xproj", "{D98A01D5-6CAF-461E-9363-FB9BC182453E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{AE38FE33-1F52-4314-A048-C5D1DAC152F6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure.Test", "Infrastructure.Test", "{B5E5BD3D-A1C1-4ECA-8983-811DC8A35995}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Jomaya.FoutLogging.002 - Infrastructure.Test", "Jomaya.FoutLogging\test\Infrastructure.Test\Jomaya.FoutLogging.002 - Infrastructure.Test\Jomaya.FoutLogging.002 - Infrastructure.Test.xproj", "{35159278-D6BE-4A68-B8BA-CCC5EF0C70B6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{91A3F827-F74F-413F-B67C-7436CA6AB88C}"
+	ProjectSection(SolutionItems) = preProject
+		global.json = global.json
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{786CD2FE-71F7-4C6C-AAA9-A2DF8AEDD5F6}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Jomaya.FoutLogging.Services", "Jomaya.FoutLogging\src\001 - Domain\Services\Jomaya.FoutLogging.Services.xproj", "{4090553D-B919-4084-A1A7-8E71E8B64EA8}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Jomaya.Frontend.Services", "Jomaya.FoutLogging\src\001 - Domain\Services\Jomaya.Frontend.Services.xproj", "{BE5459B6-33EE-4D8A-8D38-0C0F786EDDCE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5C5A4C5B-ED61-4705-84F9-69580B0C1166}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5C5A4C5B-ED61-4705-84F9-69580B0C1166}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5C5A4C5B-ED61-4705-84F9-69580B0C1166}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5C5A4C5B-ED61-4705-84F9-69580B0C1166}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F121BD62-5BB3-451E-BC54-8D0E4D9D6A40}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F121BD62-5BB3-451E-BC54-8D0E4D9D6A40}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F121BD62-5BB3-451E-BC54-8D0E4D9D6A40}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F121BD62-5BB3-451E-BC54-8D0E4D9D6A40}.Release|Any CPU.Build.0 = Release|Any CPU
+		{751B1D88-E595-4E0A-80A8-37E533B2A6E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{751B1D88-E595-4E0A-80A8-37E533B2A6E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{751B1D88-E595-4E0A-80A8-37E533B2A6E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{751B1D88-E595-4E0A-80A8-37E533B2A6E5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{75C2E592-FEE4-4E02-8B08-D8B201EB20E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{75C2E592-FEE4-4E02-8B08-D8B201EB20E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{75C2E592-FEE4-4E02-8B08-D8B201EB20E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{75C2E592-FEE4-4E02-8B08-D8B201EB20E0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D98A01D5-6CAF-461E-9363-FB9BC182453E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D98A01D5-6CAF-461E-9363-FB9BC182453E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D98A01D5-6CAF-461E-9363-FB9BC182453E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D98A01D5-6CAF-461E-9363-FB9BC182453E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{35159278-D6BE-4A68-B8BA-CCC5EF0C70B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35159278-D6BE-4A68-B8BA-CCC5EF0C70B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35159278-D6BE-4A68-B8BA-CCC5EF0C70B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35159278-D6BE-4A68-B8BA-CCC5EF0C70B6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4090553D-B919-4084-A1A7-8E71E8B64EA8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4090553D-B919-4084-A1A7-8E71E8B64EA8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4090553D-B919-4084-A1A7-8E71E8B64EA8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4090553D-B919-4084-A1A7-8E71E8B64EA8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BE5459B6-33EE-4D8A-8D38-0C0F786EDDCE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE5459B6-33EE-4D8A-8D38-0C0F786EDDCE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE5459B6-33EE-4D8A-8D38-0C0F786EDDCE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE5459B6-33EE-4D8A-8D38-0C0F786EDDCE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{23AB2C68-A392-4E32-BDC9-8BFB33F70267} = {1D62610D-7E41-4483-B790-E33F68351D30}
+		{6E426623-960B-496A-B8CB-A4D0F5660DBB} = {23AB2C68-A392-4E32-BDC9-8BFB33F70267}
+		{5C5A4C5B-ED61-4705-84F9-69580B0C1166} = {6E426623-960B-496A-B8CB-A4D0F5660DBB}
+		{7996225E-D8F8-4214-982A-3D8919ED7C41} = {1D62610D-7E41-4483-B790-E33F68351D30}
+		{F121BD62-5BB3-451E-BC54-8D0E4D9D6A40} = {7996225E-D8F8-4214-982A-3D8919ED7C41}
+		{D8B84203-2C25-4AA0-8C59-BE7E295D2EF9} = {1D62610D-7E41-4483-B790-E33F68351D30}
+		{751B1D88-E595-4E0A-80A8-37E533B2A6E5} = {D8B84203-2C25-4AA0-8C59-BE7E295D2EF9}
+		{56595307-B143-4865-8CAD-D9C1CFD49578} = {1D62610D-7E41-4483-B790-E33F68351D30}
+		{75C2E592-FEE4-4E02-8B08-D8B201EB20E0} = {56595307-B143-4865-8CAD-D9C1CFD49578}
+		{ECD1809E-C239-487B-A592-BE9FE9CC7AFC} = {1D62610D-7E41-4483-B790-E33F68351D30}
+		{D98A01D5-6CAF-461E-9363-FB9BC182453E} = {ECD1809E-C239-487B-A592-BE9FE9CC7AFC}
+		{B5E5BD3D-A1C1-4ECA-8983-811DC8A35995} = {AE38FE33-1F52-4314-A048-C5D1DAC152F6}
+		{35159278-D6BE-4A68-B8BA-CCC5EF0C70B6} = {B5E5BD3D-A1C1-4ECA-8983-811DC8A35995}
+		{786CD2FE-71F7-4C6C-AAA9-A2DF8AEDD5F6} = {23AB2C68-A392-4E32-BDC9-8BFB33F70267}
+		{4090553D-B919-4084-A1A7-8E71E8B64EA8} = {786CD2FE-71F7-4C6C-AAA9-A2DF8AEDD5F6}
+	EndGlobalSection
+EndGlobal

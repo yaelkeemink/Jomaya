@@ -1,0 +1,63 @@
+version: '2'
+
+services:
+  mysql-foutlogging:
+    image: mysql
+    container_name: mysql-foutlogging
+    environment:
+    MYSQL_PASSWORD: jomaya
+      MYSQL_DATABASE: jomaya-foutlogging
+      MYSQL_USER: jomaya
+      MYSQL_ROOT_PASSWORD: jomaya123
+    ports:
+      - 7001:3306
+    networks: 
+      - jomaya-foutlogging
+    volumes:
+      - c:/TFS/jomaya/db/foutlogging/:/var/lib/mysql
+  phpmyadmin-foutlogging:
+    image: phpmyadmin/phpmyadmin
+    container_name: phpmyadmin-foutlogging
+    links:
+     - mysql-foutlogging:db
+    ports:
+     - 7002:80
+    networks: 
+      - jomaya-foutlogging
+  jomaya.foutlogging.facade:
+    image: user/jomaya.foutlogging.facade${TAG}
+    build:
+      args:
+        source: obj/Docker/empty/
+    environment:
+      - 'ConnectionStrings:DataAccessMySqlProvider': server=db;userid=jomaya;password=jomaya;database=jomaya-foutlogging;
+      - 'ConnectionStrings:RabbitMQ': rabbitmq
+      - ASPNETCORE_ENVIRONMENT=Development
+      - DOTNET_USE_POLLING_FILE_WATCHER=1
+    restart: ON_FAILURE
+    labels:
+      - "com.microsoft.visualstudio.targetoperatingsystem=linux"
+    links:
+     - mysql-foutlogging:db
+    external_links:
+     - rabbitmq:rabbitmq
+    ports:
+      - 7003:80
+    networks: 
+      jomaya-eventbus:
+        aliases:
+         - jomaya-foutlogging       
+      jomaya-foutlogging:
+    volumes:
+      - .:/app
+      - ~/.nuget/packages:/root/.nuget/packages:ro
+      - ~/clrdbg:/clrdbg:ro
+    entrypoint: tail -f /dev/null
+
+networks:
+  jomaya-eventbus:
+    external:
+      name: jomaya-eventbus
+  jomaya-foutlogging:
+    external:
+      name: jomaya-foutlogging
